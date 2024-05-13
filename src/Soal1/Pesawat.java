@@ -24,6 +24,16 @@ public class Pesawat {
         this.kapasitasPenumpang = kapasitasPenumpang;
     }
 
+    public void setInfo(String maskapai, String jenis) {
+        this.maskapai = maskapai;
+        this.jenis = jenis;
+    }
+
+    public void setInfo(String maskapai, String jenis, int kapasitasPenumpang) {
+        this.maskapai = maskapai;
+        this.jenis = jenis;
+        this.kapasitasPenumpang = kapasitasPenumpang;
+    }
     public String getMaskapai(){
         return maskapai;
     }
