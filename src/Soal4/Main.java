@@ -2,31 +2,37 @@ package Soal4;
 
 import java.util.Scanner;
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args){
         Scanner scanner = new Scanner(System.in);
+        String ulang;
 
-        System.out.print("Masukkan massa benda (kg): ");
-        double massa = scanner.nextDouble();
+        do {
+            System.out.print("Masukkan nilai kuat arus (I) : ");
+            double kuatArus = scanner.nextDouble();
 
-        System.out.print("Masukkan percepatan gravitasi (m/s^2): ");
-        double gravitasi = scanner.nextDouble();
+            System.out.print("Masukkan nilai panjang kawat (l) : ");
+            double panjangKawat = scanner.nextDouble();
 
-        System.out.print("Masukkan ketinggian benda (m): ");
-        double ketinggian = scanner.nextDouble();
+            System.out.print("Masukkan nilai kuat medan magnet (B) : ");
+            double medanMagnet = scanner.nextDouble();
 
-        EnergiPotensial ep1 = new EnergiPotensial(massa, gravitasi);
-        EnergiPotensial ep2 = new EnergiPotensial(massa, gravitasi, ketinggian);
+            System.out.print("Masukkan nilai sudut (θ) dalam derajat, isi '0' jika tidak ada: ");
+            double thetaDegrees = scanner.nextDouble();
+            double theta = Math.toRadians(thetaDegrees);
 
-        System.out.println("Energi Potensial tanpa ketinggian:");
-        ep1.display();
+            GayaLorentz gaya;
 
-        System.out.println("\nEnergi Potensial dengan ketinggian:");
-        ep2.display();
+            if (theta == 0) {
+                gaya = new GayaLorentz(kuatArus, panjangKawat, medanMagnet);
+                System.out.println("Gaya Lorentz dengan Medan Magnet: " + gaya.hitungGaya());
+            } else {
+                gaya = new GayaLorentz(kuatArus, panjangKawat, medanMagnet, theta);
+                System.out.println("Gaya Lorentz dengan medan magnet: " + gaya.hitungGaya(theta));
+            }
 
-        System.out.print("\nMasukkan ketinggian benda untuk menghitung energi potensial tanpa objek: ");
-        double ketinggianTanpaObjek = scanner.nextDouble();
-        double hasilEnergiPotensialTanpaObjek = ep1.hitungEnergiPotensial(ketinggianTanpaObjek);
-        System.out.println("Energi Potensial tanpa objek: " + hasilEnergiPotensialTanpaObjek + " Joule");
+            System.out.print("Apakah Anda ingin menghitung lagi? (Ya/Tidak): ");
+            ulang = scanner.next();
 
+        } while (ulang.equalsIgnoreCase("ya"));
     }
 }
