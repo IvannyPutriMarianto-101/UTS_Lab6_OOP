@@ -27,7 +27,7 @@ public class Main {
                 System.out.println("Gaya Lorentz dengan Medan Magnet: " + gaya.hitungGaya());
             } else {
                 gaya = new GayaLorentz(kuatArus, panjangKawat, medanMagnet, theta);
-                System.out.println("Gaya Lorentz dengan medan magnet: " + gaya.hitungGaya(theta));
+                System.out.println("Gaya Lorentz dengan Besaran Sudut: " + gaya.hitungGaya(theta));
             }
 
             System.out.print("Apakah Anda ingin menghitung lagi? (Ya/Tidak): ");
