@@ -2,7 +2,6 @@ package Soal3;
 
 public class Main {
     public static void main(String[] args) {
-        // Account
         Account a1 = new Account("A101", "Ligma", 88);
         System.out.println(a1);
 

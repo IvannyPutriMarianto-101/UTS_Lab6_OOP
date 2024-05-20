@@ -21,12 +21,14 @@ public class GayaLorentz {
     private double medanMagnet;
     private double theta;
 
+    // constructor untuk kuatArus, panjangKawat, dan medanMagnet
     public GayaLorentz(double kuatArus, double panjangKawat, double medanMagnet){
         this.kuatArus = kuatArus;
         this.panjangKawat = panjangKawat;
         this.medanMagnet = medanMagnet;
     }
 
+    // constructor untuk kuatArus, panjangKawat, medanMagnet, theta
     public GayaLorentz(double kuatArus, double panjangKawat, double medanMagnet, double theta){
         this.kuatArus = kuatArus;
         this.panjangKawat = panjangKawat;
